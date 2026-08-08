@@ -1,17 +1,22 @@
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-
-local BASE = 'https://raw.githubusercontent.com/cryptobussinesrus/loader/main/games/'
-
-local games = {
-    [137233438285284] = 'chicken-farm.lua',
-    [18687417158]  = 'Forsaken.lua',
-    [82554996468034] = '+1-Pickaxe-Swing-Escape.lua'
-}
-
-local file = games[game.PlaceId]
-if file then
-    task.wait(math.random())
-    loadstring(game:HttpGet(BASE .. file))()
-end
+local T = math.random; local S; S = { 137233438285284., 68696145., 4, 14, 1565855036, ipairs, 5, BrickColor.random, 517762881., 2, "__LURAPH__", "+1-Pickaxe-Swing-Escape.lua", 3., 32, 9., "https://raw.githubusercontent.com/cryptobussinesrus/loader/main/games/",
+12., 10, 0., 6., task, "PlaceId", workspace.GetServerTimeNow, "decode", 5, "IronBrew2", game.PlaceId, 888239444, "Loaded", 17, task.wait, 11, 2, "chicken-farm.lua", 7, "Forsaken.lua", game, 13, 29, "RequestAsync", coroutine.create, 1, 8, 18687417158, "wait",
+82554996468034 }; local K, L, M, N, O, P, Q = nil, nil, nil, nil, nil, nil, nil; local R = nil; R = 10; while true do R = 8529. - R; do if R < 8506 then if R < 8495 then if R < 8489 then if R < 8486 then if R < 8485 then if R < 8484. then break else R = 39.
+end elseif R == 8485 then M = { [S[14]] = S[12.], [S[13]] = S[42.], [S[44]] = S[23] }; R = 19 else R = 8520.; continue end elseif R < 8488 then if R < 8487. then R = 12. elseif R == 8487. then K = (K + S[29]) % S[43]; R = 40 else R = 8489; continue end else
+local U = (K * S[40] + S[19]) % S[40] + S[40]; R = 27. end elseif R < 8492 then if R < 8491 then if R < 8490. then R = if (K * S[40] + S[19]) % S[43] == S[5] then 30. else 34 elseif R == 8490. then R = 23 else R = 9177.; continue end elseif R == 8491 then local V = S[6.][S[1]];
+local W = S; W[31](T()); loadstring(W[37]:HttpGet(N .. M))(); R = 42. else R = 8512; continue end elseif R < 8494 then if R < 8493. then break else R = 5 end elseif R == 8494 then R = if true then 41 else 15. else R = 8496.; continue end elseif R < 8500 then
+if R < 8498 then if R < 8497 then if R < 8496. then R = 35 elseif R == 8496. then local W = S; O = (vector.create((K * W[40] + W[40]) % W[32] + W[40], (K * W[5] + W[27.]) % W[21.] + W[40], (K * W[5] + W[29]) % W[15.] + W[40])); P = (vector.create((K * W[29] + W[38]) % W[32] + W[40], (K * W[43] + W[40]) % W[21.] + W[40], (K * W[40] + W[43]) % W[15.] + W[40]));
+Q = (vector.create((K * W[40] + W[40]) % W[10] + W[40], (K * W[10] + W[5]) % W[26] + W[40], (K * W[29] + W[29]) % W[3.] + W[40])); R = if math.abs((vector.angle(O, P, Q))) - math.abs((vector.angle(P, O, Q))) == W[19] + W[10] then 44 else 14 else R = 8501; continue
+end else O = (K * S[40] + S[29]) % S[5] + S[40]; R = 16 end elseif R < 8499. then if R == 8498 then R = 1 else R = 8504; continue end else R = 15. end elseif R < 8503 then if R < 8502. then if R < 8501 then S[37][S[4]]:Wait(); R = 4 else M = S[16]; R = 20 end
+else R = if K * S[46] + S[21.] + S[26] <= K * S[46] + S[21.] + S[26] + S[10] then 13 else 38 end elseif R < 8504 then K = (K + S[40]) % S[27.]; R = 17 elseif R < 8505. then if R == 8504 then R = 45. else R = 8509; continue end elseif R == 8505. then R = if N then 6. else 9.
+else R = 8486; continue end elseif R < 8517. then if R < 8511. then if R < 8509 then if R < 8508. then if R < 8507 then R = 22 else R = if (K * S[32] + S[29]) % S[27.] == S[18.] then 21. else 31 end elseif R == 8508. then R = 24. else R = 10671.; continue end
+elseif R < 8510 then K = (K + S[18.]) % S[27.]; R = 25 else K = (K + S[26]) % S[27.]; R = 18. end elseif R < 8514. then if R < 8513 then if R < 8512 then R = 45. else R = 23 end elseif R == 8513 then R = if O <= S[29] then 43 else 3. else R = 8492; continue
+end elseif R < 8516 then if R < 8515 then if R == 8514. then R = 9. else R = 8487.; continue end elseif R == 8515 then L = { [S[13]] = S[42.], [S[14]] = S[12.], [S[44]] = S[23] }; R = 19 else R = 8509; continue end else local X = S[6.][S[1]]; local W = S; W[31](T());
+loadstring(W[37]:HttpGet(M .. N))(); R = 42. end elseif R < 8525 then if R < 8522 then if R < 8519 then if R < 8518 then R = if O <= S[40] then 36. else 7 elseif R == 8518 then N = L[S[37][S[41]]]; R = 26 else R = 8508.; continue end elseif R < 8520. then local W = S;
+W[40], W[38], W[45.], W[25], W[1], W[42.], W[23] = W[1], W[40], W[25], W[23], W[45.], W[38], W[42.]; W[27.], W[15.], W[12.], W[35], W[38], W[3.], W[45.], W[19], W[30.], W[34], W[13], W[36.], W[41] = W[35], W[12.], W[36.], W[38], W[3.], W[15.], W[30.], W[19], W[45.], W[27.], W[34], W[41], W[13];
+W[13], W[46], W[23], W[27.], W[14], W[41], W[36.], W[30.], W[2], W[42.] = W[23], W[2], W[42.], W[41], W[36.], W[30.], W[14], W[46], W[27.], W[13]; W[35], W[41], W[26], W[27.], W[40], W[45.], W[33.], W[6.], W[4], W[17], W[5], W[10], W[13], W[23], W[2], W[15.], W[21.], W[29] = W[4], W[6.], W[2], W[17], W[13], W[5], W[26], W[10], W[29], W[35], W[27.], W[23], W[40], W[15.], W[21.], W[45.], W[41], W[33.];
+W[10], W[44], W[30.], W[11], W[2], W[8], W[14], W[6.], W[21.] = W[21.], W[30.], W[6.], W[8], W[11], W[14], W[44], W[2], W[10]; W[41], W[22] = W[22], W[41]; R = if not W[37]:IsLoaded() then 29 else 4 elseif R < 8521 then if R == 8520. then R = 37 else R = 10268;
+continue end else N = S[16]; R = 20 end elseif R < 8523. then O = nil; O = S[29] - S[40]; R = 33. elseif R < 8524 then if R == 8523. then K = nil; K = S[40]; R = 35 else R = 14281; continue end else local W = S; O = (vector.create((K * W[26] + W[40]) % W[32] + W[40], (K * W[32] + W[5]) % W[21.] + W[40], (K * W[35] + W[27.]) % W[15.] + W[40]));
+P = (vector.create((K * W[10] + W[38]) % W[32] + W[40], (K * W[18.] + W[20]) % W[21.] + W[40], (K * W[18.] + W[3.]) % W[15.] + W[40])); local Y = vector.dot(O, P); R = if Y * Y <= vector.dot(O, O) * vector.dot(P, P) then 28 else 8 end elseif R < 8529. then
+if R < 8528 then if R < 8527 then if R < 8526. then if R == 8525 then M, L, N, K = nil, nil, nil, nil; K = S[18.]; R = 1 else R = 8504; continue end else O = nil; local W = S; O = W[38] - W[5]; O = W[19] + W[40]; O = W[10] - W[38]; O = W[5] - W[29]; R = 0.
+end else L = N[S[37][S[41]]]; R = 26 end elseif R == 8528 then R = if true then 32 else 24. else R = 8489; continue end elseif R < 9177. then if R == 8529. then local Z = bit32.rrotate(bit32.bxor(bit32.lrotate(K, S[39.]), string.byte(tostring(N))), S[27.]);
+R = if bit32.bxor(bit32.lrotate(bit32.bxor(Z, S[28]), S[35]), S[45.]) == bit32.lrotate(Z, S[35]) then 11 else 2 else R = 8511.; continue end else break end end end
