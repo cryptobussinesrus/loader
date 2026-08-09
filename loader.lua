@@ -11,6 +11,7 @@ local games = {
     [83645629621104]  = 'Forsaken.lua',
     [82554996468034]  = '+1-Pickaxe-Swing-Escape.lua',
     [114697347887839] = '+1-Speed-Monkey-Escape.lua',
+    [90086669327265]  = '+1-Cut-Grass-Adventure.lua',
 }
 
 local file = games[game.PlaceId]
