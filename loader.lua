@@ -18,6 +18,14 @@ local games = {
     },
 
     {
+        Name = "Murder Mystery 2",
+        File = "mm2.lua",
+        Places = {
+            142823291,
+        },
+    },
+    
+    {
         Name = "Forsaken",
         File = "Forsaken.lua",
         Places = {
