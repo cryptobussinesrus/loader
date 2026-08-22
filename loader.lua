@@ -18,6 +18,14 @@ local games = {
     },
 
     {
+        Name = "+1 Followers Per Click",
+        File = "+1-Followers-Per-Click.lua",
+        Places = {
+            98695134949589,
+        },
+    },
+    
+    {
         Name = "Murder Mystery 2",
         File = "mm2.lua",
         Places = {
