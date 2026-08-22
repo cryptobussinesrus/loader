@@ -6,83 +6,18 @@ local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer or Players.PlayerAdded:Wait()
 
 local BASE = "https://raw.githubusercontent.com/cryptobussinesrus/loader/main/games/"
+local INTRO_URL = "https://raw.githubusercontent.com/cryptobussinesrus/loader/refs/heads/main/intro.lua"
 
 local games = {
-
-    {
-        Name = "Chicken Farm",
-        File = "chicken-farm.lua",
-        Places = {
-            137233438285284,
-        },
-    },
-
-    {
-        Name = "+1 Skinny Per Step",
-        File = "+1-Skinny-Per-Step.lua",
-        Places = {
-            128448883585036,
-        },
-    },
-    
-    {
-        Name = "+1 Followers Per Click",
-        File = "+1-Followers-Per-Click.lua",
-        Places = {
-            98695134949589,
-        },
-    },
-    
-    {
-        Name = "Murder Mystery 2",
-        File = "mm2.lua",
-        Places = {
-            142823291,
-        },
-    },
-    
-    {
-        Name = "Forsaken",
-        File = "Forsaken.lua",
-        Places = {
-            83645629621104,
-        },
-    },
-
-    {
-        Name = "+1 Pickaxe Swing Escape",
-        File = "+1-Pickaxe-Swing-Escape.lua",
-        Places = {
-            82554996468034,
-        },
-    },
-
-    {
-        Name = "+1 Speed Monkey Escape",
-        File = "+1-Speed-Monkey-Escape.lua",
-        Places = {
-            114697347887839,
-        },
-    },
-
-    {
-        Name = "+1 Cut Grass Adventure",
-        File = "+1-Cut-Grass-Adventure.lua",
-        Places = {
-            90086669327265,
-        },
-    },
-
-    {
-        Name = "Throw a Coin",
-        File = "Throw-a-Coin.lua",
-        Places = {
-        115681808123944,
-        72042130041700,
-        100875131717601,
-        --world 4 - give me placeid
-        },
-    },
+    { Name = "Chicken Farm", File = "chicken-farm.lua", Places = { 137233438285284 } },
+    { Name = "+1 Skinny Per Step", File = "+1-Skinny-Per-Step.lua", Places = { 128448883585036 } },
+    { Name = "+1 Followers Per Click", File = "+1-Followers-Per-Click.lua", Places = { 98695134949589 } },
+    { Name = "Murder Mystery 2", File = "mm2.lua", Places = { 142823291 } },
+    { Name = "Forsaken", File = "Forsaken.lua", Places = { 83645629621104 } },
+    { Name = "+1 Pickaxe Swing Escape", File = "+1-Pickaxe-Swing-Escape.lua", Places = { 82554996468034 } },
+    { Name = "+1 Speed Monkey Escape", File = "+1-Speed-Monkey-Escape.lua", Places = { 114697347887839 } },
+    { Name = "+1 Cut Grass Adventure", File = "+1-Cut-Grass-Adventure.lua", Places = { 90086669327265 } },
+    { Name = "Throw a Coin", File = "Throw-a-Coin.lua", Places = { 115681808123944, 72042130041700, 100875131717601 } },
 }
 
 local placeId = game.PlaceId
@@ -97,7 +32,6 @@ for _, gameInfo in ipairs(games) do
             break
         end
     end
-
     if selectedGame then
         break
     end
@@ -121,67 +55,47 @@ print("Game:", selectedGame.Name)
 print("File:", selectedGame.File)
 print("========================================")
 
-local url = BASE .. selectedGame.File
-
-local MAX_ATTEMPTS = 3
-local loaded = false
-
-for attempt = 1, MAX_ATTEMPTS do
-
-    print(
-        string.format(
-            "[Loader] Loading %s... (%d/%d)",
-            selectedGame.File,
-            attempt,
-            MAX_ATTEMPTS
-        )
-    )
-
-    local success, result = pcall(function()
-        local source = game:HttpGet(url)
-
-        if not source or source == "" then
-            error("Downloaded script is empty.")
-        end
-
-        local func, compileError = loadstring(source)
-
-        if not func then
-            error("Compile error: " .. tostring(compileError))
-        end
-
-        return func()
-    end)
-
-    if success then
-        loaded = true
-
-        print(
-            "[Loader] Successfully loaded:",
-            selectedGame.File
-        )
-
-        break
-    else
-        warn(
-            string.format(
-                "[Loader] Attempt %d failed: %s",
-                attempt,
-                tostring(result)
-            )
-        )
-
-        if attempt < MAX_ATTEMPTS then
-            task.wait(1.5)
+local function loadFromUrl(url, label)
+    local MAX_ATTEMPTS = 3
+    for attempt = 1, MAX_ATTEMPTS do
+        print(string.format("[Loader] Loading %s... (%d/%d)", label, attempt, MAX_ATTEMPTS))
+        local success, result = pcall(function()
+            local source = game:HttpGet(url)
+            if not source or source == "" then
+                error("Downloaded script is empty.")
+            end
+            local func, compileError = loadstring(source)
+            if not func then
+                error("Compile error: " .. tostring(compileError))
+            end
+            return func()
+        end)
+        if success then
+            print("[Loader] Successfully loaded:", label)
+            return true
+        else
+            warn(string.format("[Loader] Attempt %d failed for %s: %s", attempt, label, tostring(result)))
+            if attempt < MAX_ATTEMPTS then
+                task.wait(1.5)
+            end
         end
     end
+    return false
 end
 
-if not loaded then
+local introLoaded = loadFromUrl(INTRO_URL, "intro.lua")
+if not introLoaded then
+    warn("[Loader] intro.lua failed to load. Continuing without it...")
+end
+
+local gameUrl = BASE .. selectedGame.File
+local gameLoaded = loadFromUrl(gameUrl, selectedGame.File)
+
+if not gameLoaded then
     warn("========================================")
     warn("[Loader] FAILED TO LOAD SCRIPT")
     warn("File:", selectedGame.File)
-    warn("URL:", url)
+    warn("URL:", gameUrl)
     warn("PlaceId:", placeId)
     warn("========================================")
 end
