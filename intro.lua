@@ -7,7 +7,7 @@ local Debris = game:GetService("Debris")
 
 local player = Players.LocalPlayer
 
-local TYPING_DURATION   = 7
+local TYPING_DURATION   = 4
 local ASSEMBLY_DURATION = 1.0
 local HOLD_DURATION     = 0.5
 local EXPLODE_DURATION  = 1.8
