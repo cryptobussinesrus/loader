@@ -18,6 +18,14 @@ local games = {
     },
 
     {
+        Name = "+1 Skinny Per Step",
+        File = "+1-Skinny-Per-Step.lua",
+        Places = {
+            128448883585036,
+        },
+    },
+    
+    {
         Name = "+1 Followers Per Click",
         File = "+1-Followers-Per-Click.lua",
         Places = {
