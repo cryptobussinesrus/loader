@@ -17,6 +17,7 @@ local games = {
     { Name = "+1 Pickaxe Swing Escape", File = "+1-Pickaxe-Swing-Escape.lua", Places = { 82554996468034 } },
     { Name = "+1 Speed Monkey Escape", File = "+1-Speed-Monkey-Escape.lua", Places = { 114697347887839 } },
     { Name = "+1 Cut Grass Adventure", File = "+1-Cut-Grass-Adventure.lua", Places = { 90086669327265 } },
+    { Name = "+1 Web Swing Escape", File = "+1-Web-Swing-Escape.lua", Places = { 110668201954727 } },
     { Name = "Throw a Coin", File = "Throw-a-Coin.lua", Places = { 115681808123944, 72042130041700, 100875131717601 } },
 }
 
